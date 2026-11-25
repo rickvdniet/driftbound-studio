@@ -1,0 +1,20 @@
+# secrets & local config
+.env
+secrets/
+*.token.json
+client_secret*.json
+# generated media / data
+workspace/*
+!workspace/.gitkeep
+*.db
+*.db-wal
+*.db-shm
+# python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.pytest_cache/
+# node
+node_modules/
+frontend/dist/
