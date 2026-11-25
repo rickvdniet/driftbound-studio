@@ -84,4 +84,13 @@ OpenAI / Runway / ElevenLabs exist as interfaces only. Revisit only after the fr
 - **API policies and limits** (quota costs, YPP thresholds, upload limits) change. They are marked "verify" in code and docs.
 
 ## Long-duration validation log
-See the bottom of this file (filled in by the demo run).
+Run 2026-11-25, build container (4-thread Xeon CPU, no GPU, libx264), project "Sleeping Near Saturn", 1080p30,
+60 s procedural master (stars + clouds + ambient glow), 4 synthesized audio layers:
+
+| Duration | Render time | Size | Result |
+|---|---|---|---|
+| 60 s preview (incl. 1080p master) | 342 s | – | loop seamless (boundary ratio 0.96), −20.4 LUFS |
+| 10 min | 47 s | 83 MB | technical + creative QA pass |
+| **8 h** | **35.5 min (~13.5× realtime)** | **3.96 GB** | **QA pass**: duration 28800.07 s, A/V aligned, −20.4 LUFS, LRA 2.3, true peak −4.5 dBTP, no silence/black/frozen frames |
+
+Memory stayed flat during the 8 h assembly (worker ≈170 MB RSS, FFmpeg ≈66 MB).
